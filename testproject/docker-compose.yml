@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+  djangoapp:
+    container_name: djangoapp
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - MS_USER=root
+      - MS_PASSWORD=root
+      - MS_DB=test
+      - MS_PORT=3306
+      - MS_HOST=db
+    depends_on:
+      - db
+
+  db:
+    container_name: db
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+
+volumes:
+  dbdata: {}
