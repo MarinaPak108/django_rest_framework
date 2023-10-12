@@ -6,17 +6,15 @@
 
 models:
 
-Category - категории объявлений, поля: name
-City - город объявления, поля: name
-Advert - объявление, поля: created (дата создания), title, description, city, category, views
+Category - filed:name
+City - field: name
+Advert - field: created, title, description, city (fk), category(fk), views (counter)
 
 views:
 
-/api/advert-list/ - json список объявлений со всеми полями + название города + название категории
-/api/advert/<advert-pk>/ - json detail view одного объявления со всеми полями, просмотр данного вью увеличивает счётчик просмотров в объявлении
+/api/advert-list/ - json list of all adverts
+/api/advert/<advert-pk>/ - json detail view of selected view (views counter)
 
 
 Dockerfile (MySQL locally)
-
-additionally
-- docker-compose: Project + MySQL virtually
+Docker-compose (MySQL image)
