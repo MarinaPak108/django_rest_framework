@@ -6,7 +6,7 @@
 
 ## Models:
 
-Category - filed:name<br>
+Category - field:name<br>
 City - field: name<br>
 Advert - field: created, title, description, city (fk), category(fk), views (counter)<br>
 
