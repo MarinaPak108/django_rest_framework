@@ -4,17 +4,17 @@
 - djangorestframework==3.14.0
 - mysqlclient==2.2.0
 
-models:
+##models:
 
-Category - filed:name
-City - field: name
-Advert - field: created, title, description, city (fk), category(fk), views (counter)
+Category - filed:name<br>
+City - field: name<br>
+Advert - field: created, title, description, city (fk), category(fk), views (counter)<br>
 
-views:
+##views:
 
-/api/advert-list/ - json list of all adverts
-/api/advert/<advert-pk>/ - json detail view of selected view (views counter)
+/api/advert-list/ - json list of all adverts<br>
+/api/advert/<advert-pk>/ - json detail view of selected view (views counter)<br>
 
-
-Dockerfile (MySQL locally)
-Docker-compose (MySQL image)
+##Docker
+Dockerfile (MySQL locally)<br>
+Docker-compose (MySQL image)<br>
